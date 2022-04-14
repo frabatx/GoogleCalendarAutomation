@@ -1,7 +1,7 @@
 from os import path
 import pickle
 from google.auth.transport.requests import Request
-from google_auto_oauthlib.flow import InstalledAppFlow
+from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 
 SCOPES = [
@@ -10,7 +10,7 @@ SCOPES = [
         ]
 
 def get_credentials_google():
-    flow = InstalledAppFlow.from_client_secrets_file("google-credentials.json")
+    flow = InstalledAppFlow.from_client_secrets_file("google-credentials.json", SCOPES)
     creds = flow.run_local_server(port = 80)
 
     pickle.dump(creds, open('tocken.txt', 'wb'))
