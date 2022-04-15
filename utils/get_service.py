@@ -22,7 +22,7 @@ def get_calendar_service():
         creds = pickle.load(open('tocken.txt', 'rb'))
     # If expired, refresh credentials
     if not creds or not creds.valid:
-        if creds and creds.expired and creds.refresh_tocken:
+        if creds and creds.expired and creds.refresh_token:
             creds.refresh(Request())
         else:
             creds = get_credentials_google()
