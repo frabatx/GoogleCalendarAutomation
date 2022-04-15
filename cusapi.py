@@ -27,7 +27,7 @@ from routes.calendar import routes_calendar
 
 # app = create_app()
 app = FastAPI()
-app.include_router(routes_calendar, prefix='/calendar')
+app.include_router(routes_calendar)
 # get_calendar_service()
 # @app.get('/cus')
 # def get_response():
