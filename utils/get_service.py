@@ -13,19 +13,15 @@ SCOPES = [
 
 def get_credentials_google():
     flow = InstalledAppFlow.from_client_secrets_file("google-credentials.json", SCOPES)
-
     creds = flow.run_local_server(port = 80)
-
     pickle.dump(creds, open('token.txt', 'wb'))
     return creds
 
 def get_credentials_google_heroku():
-    
-
     # Use the client_secret.json file to identify the application requesting
     # authorization. The client ID (from that file) and access scopes are required.
     flow = google_auth_oauthlib.flow.Flow.from_client_secrets_file(
-        'client_secret.json',
+        'google-credentials.json',
         scopes=['https://www.googleapis.com/auth/drive.metadata.readonly'])
 
     # Indicate where the API server will redirect the user after the user completes
@@ -57,7 +53,7 @@ def get_calendar_service():
             creds.refresh(Request())
             print("refresh creds")
         else:
-            creds = get_credentials_google()
+            creds = get_credentials_google_heroku()
             print(f'get_credential because not valid: {creds}')
     service = build('calendar', 'v3', credentials = creds)
     return service
