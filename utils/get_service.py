@@ -57,7 +57,7 @@ def get_calendar_service():
             creds.refresh(Request())
             print("refresh creds")
         else:
-            creds = get_credentials_google_heroku()
+            creds = get_credentials_google()
             print(f'get_credential because not valid: {creds}')
     service = build('calendar', 'v3', credentials = creds)
     return service
