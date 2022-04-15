@@ -3,6 +3,10 @@ from utils.calendar import create_event, delete_event, get_event, update_event
 
 routes_calendar = APIRouter()
 
+@routes_calendar.get("/")
+def index(eventId: str):
+    return {"Hello": "friend!"}
+
 @routes_calendar.post("/create")
 async def create(request: Request):
     template = await request.json()
