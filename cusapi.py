@@ -1,12 +1,11 @@
 #!/usr/bin/env python
-from typing import Optional
 from fastapi import FastAPI, Path, Query
-from fastapi.middleware.cors import CORSMiddleware
-from pathlib import Path
-import uvicorn
-from pprint import pprint
-from utils.get_service import get_calendar_service
-from routes.calendar import routes_calendar
+# from fastapi.middleware.cors import CORSMiddleware
+# from pathlib import Path
+# import uvicorn
+# from pprint import pprint
+# from utils.get_service import get_calendar_service
+# from routes.calendar import routes_calendar
 #from Google import Create_Service
 
 
