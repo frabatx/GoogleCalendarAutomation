@@ -33,7 +33,7 @@ def get_credentials_google_heroku():
     # match one of the authorized redirect URIs for the OAuth 2.0 client, which you
     # configured in the API Console. If this value doesn't match an authorized URI,
     # you will get a 'redirect_uri_mismatch' error.
-    flow.redirect_uri = 'https://cus-calendar.herokuapp.com/oauth2callback'
+    flow.redirect_uri = 'https://cus-calendar.herokuapp.com'
 
     # Generate URL for request to Google's OAuth 2.0 server.
     # Use kwargs to set optional request parameters.
