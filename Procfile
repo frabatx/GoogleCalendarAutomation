@@ -1,1 +1,1 @@
-web: gunicorn --bind :$PORT --workers 1 --threads 2 --timeout 0 cusapi:app --preload -b 0.0.0.0:8000
+web: gunicorn cusapi:app --bind 0.0.0.0:$PORT --worker-class uvicorn.workers.UvicornWorker
