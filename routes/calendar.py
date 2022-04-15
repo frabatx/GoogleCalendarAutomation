@@ -7,10 +7,10 @@ routes_calendar = APIRouter()
 def index():
     return {"Hello": "friend!"}
 
-# @routes_calendar.post("/create")
-# async def create(request: Request):
-#     template = await request.json()
-#     return create_event(template)
+@routes_calendar.post("/create")
+async def create(request: Request):
+    template = await request.json()
+    return create_event(template)
 
 # @routes_calendar.get("/event/{eventId}")
 # def get(eventId: str):
