@@ -14,7 +14,6 @@ SCOPES = [
 def get_credentials_google():
     flow = InstalledAppFlow.from_client_secrets_file("google-credentials.json", SCOPES)
     creds = flow.run_local_server(port = 80)
-    #pickle.dump(creds, open('token.txt', 'wb'))
     return creds
 
 def get_credentials_google_heroku():
@@ -42,21 +41,8 @@ def get_credentials_google_heroku():
 
 def get_calendar_service():
     creds = None
-    # if path.exists('token.txt'):
-    #     creds = pickle.load(open('token.txt', 'rb'))
-    #     print(f"token exist: {creds.to_json()}")
-    # # If expired, refresh credentials
-    # if not creds or not creds.valid:
-    #     print('credentials not valid')
-    #     if creds and creds.expired and creds.refresh_token:
-    #         print(f"are_credsexpired? {creds.expired}")
-    #         creds.refresh(Request())
-    #         print(f"refresh creds: {creds.to_json()}")
-    #     else:
-    #         creds = get_credentials_google()
-    #         print(f'get_credential because not valid: {creds.to_json()}')
     creds = get_credentials_google()
     print(f'get_credentials: {creds.to_json()}')
     service = build('calendar', 'v3', credentials = creds)
     return service
-    
+
