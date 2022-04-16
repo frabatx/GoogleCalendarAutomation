@@ -6,6 +6,7 @@ service = get_calendar_service()
 def create_event(template: dict):
     try:
         responce = service.events().insert(calendarId = 'primary', body=template).execute()
+        print(responce)
         return responce
     except Exception as e:
         return response_json(message=e.message, status = 500)

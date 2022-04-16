@@ -6,8 +6,9 @@ from routes.calendar import routes_calendar
 # app = create_app()
 app = FastAPI()
 app.include_router(routes_calendar)
-get_calendar_service()
+# get_calendar_service()
 
 
 # if __name__ == '__main__':
     # uvicorn.run(app)
+ 
