@@ -10,6 +10,7 @@ def index():
 @routes_calendar.post("/create")
 async def create(request: Request):
     template = await request.json()
+    print(template)
     return create_event(template)
 
 # @routes_calendar.get("/event/{eventId}")

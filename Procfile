@@ -1,1 +1,1 @@
-web: gunicorn cusapi:app --bind 0.0.0.0:$PORT --worker-class uvicorn.workers.UvicornWorker
+web: gunicorn cusapi:app --bind 0.0.0.0:80 --worker-class uvicorn.workers.UvicornWorker
